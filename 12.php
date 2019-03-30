@@ -41,6 +41,8 @@ $head = array();
 					$head[] = "User-Agent: Mozilla/5.0 (Linux; U; Android 8.1.0; in-id; SM-J530Y Build/M1AJQ) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30";
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+		$result = curl_exec($ch);
+		$js = json_decode($result,true);
 		if ($js['message'] == 'OK') {
 		}
 		else
